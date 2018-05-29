@@ -1,0 +1,4 @@
+Flask
+Flask-Script
+Nose
+Flask-SocketIO

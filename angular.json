@@ -7,25 +7,23 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "pm",
+      "prefix": "app",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/apm",
+            "outputPath": "dist/lkd",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/api",
               "src/favicon.ico"
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/bootstrap/dist/css/bootstrap.css"
+              "src/styles/styles.scss"
             ],
             "scripts": []
           },
