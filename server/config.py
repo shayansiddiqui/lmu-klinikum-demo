@@ -3,13 +3,13 @@
 import logging
 from datetime import timedelta
 
-project_name = "demo_engine"
+project_name = "server"
 
 
 # base config class; extend it to your needs.
 class Config(object):
     # use DEBUG mode?
-    DEBUG = False
+    DEBUG = True
 
     # use TESTING mode?
     TESTING = False
@@ -47,7 +47,7 @@ class Config(object):
     # see example/ for reference
     # ex: BLUEPRINTS = ['blog']  # where `blog` is a Blueprint instance
     # ex: BLUEPRINTS = [('blog', {'url_prefix': '/myblog'})]  # where `blog` is a Blueprint instance
-    BLUEPRINTS = ['apps']
+    BLUEPRINTS = ['api']
 
 
 # config class for development environment

@@ -6,9 +6,9 @@ from empty import Empty
 from flask import render_template
 
 
-# apps is a special folder where you can place your blueprints
+# api is a special folder where you can place your blueprints
 PROJECT_PATH = os.path.abspath(os.path.dirname(__file__))
-sys.path.insert(0, os.path.join(PROJECT_PATH, "apps"))
+sys.path.insert(0, os.path.join(PROJECT_PATH, "api"))
 
 basestring = getattr(__builtins__, 'basestring', str)
 

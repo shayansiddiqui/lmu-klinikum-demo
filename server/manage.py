@@ -12,7 +12,7 @@ if __name__ == "__main__":
     manager.add_option("-n", "--name", dest="app_name", required=False, default=config.project_name)
     manager.add_option("-c", "--config", dest="config", required=False, default=config.Dev)
     manager.add_command("test", commands.Test())
-    manager.add_command("apps", commands.Apps())
+    manager.add_command("api", commands.Apps())
     manager.add_command("routes", commands.Routes())
 
     manager.run()

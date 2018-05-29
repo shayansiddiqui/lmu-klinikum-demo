@@ -45,7 +45,7 @@ class Apps(Command):
     """
     Command to handle blueprints within your project
     """
-    APPS_FOLDER = 'apps'
+    APPS_FOLDER = 'api'
     NEW_APP = False
     _requirements = None
 
@@ -143,14 +143,14 @@ class Test(Command):
         sys.path.insert(0, project_path)
 
         # our special folder for blueprints
-        if exists('apps'):
-            sys.path.insert(0, join('apps'))
+        if exists('api'):
+            sys.path.insert(0, join('api'))
 
         loader = unittest.TestLoader()
         all_tests = []
 
-        if exists('apps'):
-            for path in glob.glob('apps/*'):
+        if exists('api'):
+            for path in glob.glob('api/*'):
                 if isdir(path):
                     tests_dir = join(path, 'tests')
 
