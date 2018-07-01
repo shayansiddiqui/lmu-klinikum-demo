@@ -1,6 +1,6 @@
 <div class="">
   <mat-form-field class="full-width">
-    <mat-select [(value)]="selected">
+    <mat-select [(value)]="selected" (selectionChange)="selectModel()">
       <mat-option>None</mat-option>
       <mat-option *ngFor="let model of modelList" value="{{model.name}}">{{model.name}}</mat-option>
     </mat-select>

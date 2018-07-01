@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
   template: `
     <header>
       <mat-toolbar color="primary">
-        <a [routerLink]="['/']" class="logotTxt">LMU Klinikum Demo</a>
+        <a [routerLink]="['/']" class="logotTxt">AI Med Demo</a>
         <!--<a class="links" [routerLink]="['/posts']">Posts</a>-->
         <!--<a class="links" [routerLink]="['/react']">React</a>-->
         <!--<a class="links" href="/api/graphql">GraphQL browser</a>        -->

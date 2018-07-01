@@ -1,2 +1,51 @@
-.my-drop-zone { border: dotted 3px lightgray; width: 70%; height: 300px; margin-left: 15%;padding-left: 27%;
-  padding-top: 16%;}
+.my-drop-zone {
+  border: dotted 3px lightgray;
+  width: 400px;
+  height: 300px;
+  display: table;
+}
+
+.drop-zone-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.result-zone-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+.result-zone {
+  border: dotted 3px lightgray;
+  width: 400px;
+  height: 300px;
+  display: table;
+}
+
+.nv-file-over {
+  border: dotted 3px red;
+}
+
+.upload-img {
+  max-height: 294px;
+  max-width: 394px
+}
+.result-img {
+  max-height: 294px;
+  max-width: 394px
+}
+.upload-input{
+  margin-left: 20%;
+}
+
+.square{
+  border: solid 1px #000;
+  width: 20px;
+  height:20px;
+  float: left;
+  background-color: #00BCD4;
+}
+/* Default class applied to drop zones on over */

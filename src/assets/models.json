@@ -1,0 +1,10 @@
+[
+  {
+    "name": "RelayNet",
+    "hasDemo": true
+  },
+  {
+    "name": "QuickNat",
+    "hasDemo": true
+  }
+]

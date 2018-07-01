@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-model-selector',
@@ -6,19 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./model-selector.component.css']
 })
 export class ModelSelectorComponent implements OnInit {
-  public modelList = null;
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>();
 
-  constructor() {
+  public modelList = null;
+  public selected = '';
+
+  constructor(private http: HttpClient) {
   }
 
   ngOnInit() {
-    this.modelList = [{
-      name: 'RelayNet',
-      hasDemo: true
-    },
-      {
-        name: 'QuickNat',
-        hasDemo: true
-      }];
+    this.http.get('./assets/models.json').subscribe(data => {
+      this.modelList = data;
+    });
+  }
+
+  selectModel() {
+    this.notify.emit(this.selected);
+    console.log(this.selected);
   }
 }

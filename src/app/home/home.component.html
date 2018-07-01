@@ -7,7 +7,7 @@
         </mat-card-header>
         <div class="banner-technologies">
           <div class="container">
-            <app-model-selector></app-model-selector>
+            <app-model-selector (notify)="changeModel($event)"></app-model-selector>
           </div>
         </div>
       </mat-card>
