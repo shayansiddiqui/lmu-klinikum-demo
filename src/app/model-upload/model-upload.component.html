@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-6">
+  <div class="col-lg-5">
     <div class="row">
       <div class="col-lg-12">
         <div ng2FileDrop
@@ -24,34 +24,49 @@
                   <input class="upload-input" type="file" ng2FileSelect [uploader]="uploader"/>
                 </div>
               </div>
+              <br>
+              <div class="row">
+                <div class="col-lg-12">
+                  <a [routerLink]="" (click)="sampleFile()">Dont have a file? use sample file</a>
+                </div>
+              </div>
             </div>
             <ng-template #filename>
-              <img [src]="filePreviewPath" class="upload-img" *ngIf="filePreviewPath"/>
+              <video id="preview-video" class="result-img" [src]="filePreviewPath" (timeupdate)="timeUpdate($event)"
+                     #previewVideo>
+              </video>
             </ng-template>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div style="margin: 10px 170px;">
-              <button [disabled]="noFile" (click)="uploader.clearQueue()">
-                Clear
-              </button>
-            </div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class="col-lg-2">
+    <div class="row">
+      <div class="col-lg-12">
+        <button type="button" class="btn btn-success btn-lg" style="width: 100%; margin-top: 225px"
+                (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
+          Segment <i class="fa fa-refresh"></i>
+        </button>
+      </div>
+    </div>
+  </div>
 
-  <div class="col-lg-6">
+  <div class="col-lg-5">
     <div class="row">
       <div class="col-lg-12">
         <div class="well result-zone">
           <div class="result-zone-container">
-            <div *ngIf="noResult; else result" class="result-zone-placeholder">Prediction result will be shown here
+            <div *ngIf="noResult; else result" class="result-zone-placeholder">Segmentation result will be shown here
             </div>
             <ng-template #result>
-              <img [src]="resultImgPath" class="result-img"/>
+              <video id="result-video" class="result-img" [src]="resultImgPath" #resultVideo>
+              </video>
             </ng-template>
           </div>
         </div>
@@ -59,72 +74,39 @@
     </div>
     <div class="row">
       <div class="col-lg-12">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
         <div style="margin: 10px 150px;">
-          <button [disabled]="noResult">
-            Download
-          </button>
+
         </div>
       </div>
     </div>
   </div>
 </div>
-<hr>
-<div class="row" style="text-align: center; display: block">
-  <button type="button" class="btn btn-success btn-s"
-          (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
-    <span class="glyphicon glyphicon-upload"></span> Process
-  </button>
-</div>
-<hr>
+<hr color="white">
 <div class="row">
-  <div class="col-lg-12">
-    <!--[-->
-    <!--{"id": -1, "name": "void", "rgb_values": [0, 0, 0]},-->
-    <!--{"id": 0, "name": "Region above the retina (RaR)", "rgb_values": [128, 0, 0]},-->
-    <!--{"id": 1, "name": "ILM: Inner limiting membrane", "rgb_values": [0, 128, 0]},-->
-    <!--{"id": 2, "name": "NFL-IPL: Nerve fiber ending to Inner plexiform layer", "rgb_values": [128, 128, 0]},-->
-    <!--{"id": 3, "name": "INL: Inner Nuclear layer", "rgb_values": [0, 0, 128]},-->
-    <!--{"id": 4, "name": "OPL: Outer plexiform layer", "rgb_values": [128, 0, 128]},-->
-    <!--{"id": 5, "name": "ONL-ISM: Outer Nuclear layer to Inner segment myeloid", "rgb_values": [0, 128, 128]},-->
-    <!--{"id": 6, "name": "ISE: Inner segment ellipsoid", "rgb_values": [128, 128, 128]},-->
-    <!--{"id": 7, "name": "OS-RPE: Outer segment to Retinal pigment epithelium", "rgb_values": [64, 0, 0]},-->
-    <!--{"id": 8, "name": "Region below RPE (RbR)", "rgb_values": [192, 0, 0]},-->
-    <!--{"id": 9, "name": "Fluid region", "rgb_values": [64, 128, 0]}];-->
-    <ul style="list-style: none;">
-      <li>
-        <div class="square" style="background-color: rgb(128, 0, 0);"></div>&nbsp;&nbsp;Region above the retina (RaR)
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(0, 128, 0);"></div>&nbsp;&nbsp;ILM: Inner limiting membrane
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(128, 128, 0)"></div>&nbsp;&nbsp;NFL-IPL: Nerve fiber ending to
-        Inner plexiform layer
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(0, 0, 128)"></div>&nbsp;&nbsp;INL: Inner Nuclear layer
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(128, 0, 128)"></div>&nbsp;&nbsp;OPL: Outer plexiform layer
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(0, 128, 128)"></div>&nbsp;&nbsp;ONL-ISM: Outer Nuclear layer to
-        Inner segment myeloid
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(128, 128, 128)"></div>&nbsp;&nbsp;ISE: Inner segment ellipsoid
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(64, 0, 0)"></div>&nbsp;&nbsp;OS-RPE: Outer segment to Retinal
-        pigment epithelium
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(192, 0, 0)"></div>&nbsp;&nbsp;Region below RPE (RbR)
-      </li>
-      <li>
-        <div class="square" style="background-color: rgb(64, 128, 0)"></div>&nbsp;&nbsp;Fluid region
-      </li>
-    </ul>
+  <div class="col-lg-1">
+    <button type="button" class="btn btn-outline-danger btn-lg" [disabled]="noFile" (click)="clear()">
+      Clear <i class="fa fa-trash"></i>
+    </button>
+  </div>
+  <div class="col-lg-1" style="text-align: right">
+    <button type="button" id="playpause-button" [disabled]="noFile" class="btn btn-primary btn-lg"
+            (click)="playPause()" #playPauseButton>
+      <i class="fa fa-play"></i>
+    </button>
+  </div>
+  <div class="col-lg-9" style="text-align: center">
+    <mat-slider style="width: 100%;" id="seekslider" min="0" max="100" step="1" [value]="sliderValue" [disabled]="noFile" (input)="vidSeek($event)" #seekslider></mat-slider>
+  </div>
+  <div class="col-lg-1" style="text-align: right">
+    <button (click)="downloadFile()" class="btn btn-outline-primary btn-lg" [disabled]="noResult">
+      <i class="fa fa-download"></i>
+    </button>
   </div>
 </div>
+<hr color="white">
 

@@ -39,6 +39,8 @@ class Config(object):
 
     LOAD_MODULES_EXTENSIONS = ['views', 'models']
 
+    UPLOAD_FOLDER = '/tmp'
+
     EXTENSIONS = [
         
         'extensions.toolbar',

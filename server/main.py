@@ -12,6 +12,8 @@ sys.path.insert(0, os.path.join(PROJECT_PATH, "api"))
 
 basestring = getattr(__builtins__, 'basestring', str)
 
+os.environ.update({'FREESURFER_HOME': '/usr/local/freesurfer'})
+
 
 class App(Empty):
     

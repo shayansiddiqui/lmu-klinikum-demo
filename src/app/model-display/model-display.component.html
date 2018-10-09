@@ -1,22 +1,39 @@
 <mat-card>
   <mat-card-header>
-    <mat-card-title><strong>RelayNet: Retinal Layer and Fluid Segmentation
-      of Macular Optical Coherence Tomography
-      using Fully Convolutional Networks</strong></mat-card-title>
+    <mat-card-title><span class="model-title"><strong>{{selectedModel?selectedModel.paper_title:''}}</strong></span>
+    </mat-card-title>
   </mat-card-header>
-  <p style="text-align: justify"><strong>Author:</strong> ABHIJIT GUHA ROY, SAILESH CONJETI, SRI PHANI KRISHNA KARRI, DEBDOOT SHEET, AMIN KATOUZIAN, CHRISTIAN WACHINGER2 AND NASSIR NAVAB</p>
+  <p style="text-align: left">{{selectedModel?selectedModel.authors:''}}</p>
   <br>
-  <app-model-upload></app-model-upload>
-  <br>
-  <p style="text-align: justify">
-    <strong>Abstract: </strong>Optical coherence tomography (OCT) is used for non-invasive diagnosis of diabetic
-    macular edema assessing the retinal layers. In this paper, we propose a new fully convolutional
-    deep architecture, termed ReLayNet, for end-to-end segmentation of retinal layers and fluid
-    masses in eye OCT scans. ReLayNet uses a contracting path of convolutional blocks (encoders)
-    to learn a hierarchy of contextual features, followed by an expansive path of convolutional blocks
-    (decoders) for semantic segmentation. ReLayNet is trained to optimize a joint loss function
-    comprising of weighted logistic regression and Dice overlap loss. The framework is validated on a
-    publicly available benchmark dataset with comparisons against five state-of-the-art segmentation
-    methods including two deep learning based approaches to substantiate its effectiveness.
-  </p>
+  <app-model-upload [selectedModel]="selectedModel" (notify)="changeContent($event)"></app-model-upload>
+</mat-card>
+<mat-card *ngIf="stats && stats.color_map">
+  <div class="row">
+    <div class="col-lg-12">
+      <table style="margin: 0px auto;">
+        <tr>
+          <th>
+            Color
+          </th>
+          <th>
+            Label
+          </th>
+          <th *ngIf="stats.volume_estimates">
+            Volume Estimates(cubic mm)
+          </th>
+        </tr>
+        <tr *ngFor="let label of stats.color_map">
+          <td>
+            <div class="square" [ngStyle]="{'background-color': 'rgb('+label.rgb_values+')'}"></div>
+          </td>
+          <td>
+            <span>{{label.name}}</span>
+          </td>
+          <td *ngIf="stats.volume_estimates">
+            <span>{{stats.volume_estimates[label.id]}}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </mat-card>

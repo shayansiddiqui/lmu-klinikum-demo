@@ -1,0 +1,33 @@
+.model-title {
+  font-size: 20px;
+}
+
+mat-card {
+  margin: 20px auto;
+}
+
+.square {
+  border: solid 1px #FFF;
+  width: 20px;
+  height: 20px;
+  float: left;
+  background-color: #00BCD4;
+}
+
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 2px 100px;
+}
+
+th {
+  text-align: left;
+}
+
+table {
+  border-spacing: 5px;
+}
+

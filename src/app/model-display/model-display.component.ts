@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-model-display',
@@ -6,11 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./model-display.component.css']
 })
 export class ModelDisplayComponent implements OnInit {
+  @Input() public selectedModel: any;
+
+  stats: any;
 
   constructor() {
   }
 
   ngOnInit() {
+  }
+
+  changeContent(stats) {
+    console.log(stats);
+    this.stats = stats;
   }
 
 }

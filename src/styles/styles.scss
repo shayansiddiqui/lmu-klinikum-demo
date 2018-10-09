@@ -25,15 +25,15 @@ nav a {
 
 @include mat-core();
 
-$primary: mat-palette($mat-light-blue);
+$primary: mat-palette($mat-green);
 $accent:  mat-palette($mat-amber, A200, A100, A400);
 
-$theme: mat-light-theme($primary, $accent);
+$theme: mat-dark-theme($primary, $accent);
 
 @include angular-material-theme($theme);
 
 .m2app-dark {
-  $dark-primary: mat-palette($mat-pink, 700, 500, 900);
+  $dark-primary: mat-palette($mat-green, 700, 500, 900);
   $dark-accent:  mat-palette($mat-blue-grey, A200, A100, A400);
   $dark-warn:    mat-palette($mat-deep-orange);
 
@@ -44,6 +44,7 @@ $theme: mat-light-theme($primary, $accent);
 
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background-color: #212121;
 
   // Helps fonts on OSX looks more consistent with other systems
   // Isn't currently in button styles due to performance concerns
