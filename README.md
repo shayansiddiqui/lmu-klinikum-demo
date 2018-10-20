@@ -1,3 +1,3 @@
-# LMU Klinikum Demo 
-
-#### The demo website to showcase the research projects.
+# AI Med Demo projects
+#### The website to showcase the research projects.
+# [View here](https://quicknat.ai-med.de/)
