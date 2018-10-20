@@ -37,6 +37,7 @@ yarn-error.log
 testem.log
 /typings
 server/logs
+server/downloads/*
 
 # System Files
 *.DS_Store
