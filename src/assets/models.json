@@ -1,9 +1,13 @@
 {
   "quicknat": {
     "title": "QuickNAT: Brain Segmentation",
-    "paper_title": "QuickNAT: Segmenting MRI Neuroanatomy in 20 seconds",
+    "paper_title": "QuickNAT: Fast whole brain segmentation of MRI T1 scans",
     "abstract": "Whole brain segmentation from structural magnetic resonance imaging is a prerequisite for most morphological analyses, but requires hours of processing time and therefore delays the availability of image markers after scan acquisition. We introduce QuickNAT, a fully convolution neural network that segments a brain scan in 20 seconds. To enable training of the complex network with limited annotated data, we propose to pre-train on auxiliary labels created from existing segmentation software and to subsequently fine-tune on manual labels. In an extensive set of evaluations on eight datasets that cover a wide age range, pathology, and different scanners, we demonstrate that QuickNAT achieves superior performance to state-of-the-art methods, while being about 700 times faster. This drastic speed up greatly facilitates the processing of large data repositories and supports the translation of imaging biomarkers by making them almost instantaneously available.",
     "authors":"Abhijit Guha Roy, Sailesh Conjeti, Nassir Navab and Christian Wachinger",
+    "github": "https://github.com/abhi4ssj/QuickNATv2",
+    "arxiv":"https://arxiv.org/abs/1801.04161",
+    "otherTitle": "NeuroImage",
+    "other":"https://www.sciencedirect.com/science/article/pii/S1053811918321232?via%3Dihub",
     "hasDemo": true
   },
   "relaynet": {
@@ -11,6 +15,10 @@
     "paper_title": "RelayNet: Retinal Layer and Fluid Segmentation of Macular Optical Coherence Tomography using Fully Convolutional Networks",
     "abstract": "Optical coherence tomography (OCT) is used for non-invasive diagnosis of diabetic macular edema assessing the retinal layers. In this paper, we propose a new fully convolutional deep architecture, termed ReLayNet, for end-to-end segmentation of retinal layers and fluid masses in eye OCT scans. ReLayNet uses a contracting path of convolutional blocks (encoders) to learn a hierarchy of contextual features, followed by an expansive path of convolutional blocks (decoders) for semantic segmentation. ReLayNet is trained to optimize a joint loss function comprising of weighted logistic regression and Dice overlap loss. The framework is validated on a publicly available benchmark dataset with comparisons against five state-of-the-art segmentation methods including two deep learning based approaches to substantiate its effectiveness.",
     "authors":"Abhijit Guha Roy, Sailesh Conjeti, Christian Wachinger and Nassir Navab",
+    "github": "https://github.com/abhi4ssj/ReLayNet",
+    "arxiv":"https://arxiv.org/abs/1704.02161",
+    "otherTitle": "Biomedical Optics Express",
+    "other":"https://www.osapublishing.org/boe/abstract.cfm?uri=boe-8-8-3627",
     "hasDemo": true
   }
 }

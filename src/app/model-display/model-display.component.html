@@ -1,13 +1,29 @@
 <mat-card>
-  <mat-card-header>
+  <mat-card-header style="display: block;text-align: center">
     <mat-card-title><span class="model-title"><strong>{{selectedModel?selectedModel.paper_title:''}}</strong></span>
     </mat-card-title>
   </mat-card-header>
-  <p style="text-align: left">{{selectedModel?selectedModel.authors:''}}</p>
+  <p style="text-align: center" [hidden]="! selectedModel">
+    <span><a target="_blank" href="{{selectedModel ? selectedModel.arxiv : ''}}">Arxiv</a> </span> |
+    <span><a target="_blank" href="{{selectedModel ? selectedModel.github : ''}}">Github</a></span> |
+    <span><a target="_blank" href="{{selectedModel ? selectedModel.other : ''}}">{{selectedModel ? selectedModel.otherTitle: 'Other'}}</a></span>
+  </p>
   <br>
   <app-model-upload [selectedModel]="selectedModel" (notify)="changeContent($event)"></app-model-upload>
 </mat-card>
 <mat-card *ngIf="stats && stats.color_map">
+<!--  <div class="row" *ngIf="stats.predicted_age">
+    <div class="col-lg-12" style="text-align: center;">
+      <h3><span>* The predicted age is <span style="color: limegreen">{{stats.predicted_age}}</span> with an uncertainity of <span style="color: crimson">{{stats.predicted_age_uncertainty}}</span></span></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12" style="text-align: center">
+      <p>* Based on this <a target="_blank" href = "https://www.sciencedirect.com/science/article/pii/S1053811918302854">NeuroImage</a> article</p>
+    </div>
+  </div>
+-->
+  <br>
   <div class="row">
     <div class="col-lg-12">
       <table style="margin: 0px auto;">

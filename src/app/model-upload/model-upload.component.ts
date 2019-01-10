@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {FileItem, FileUploader, ParsedResponseHeaders} from 'ng2-file-upload';
 import {DomSanitizer} from '@angular/platform-browser';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
@@ -7,6 +7,8 @@ import {NgxSpinnerService} from 'ngx-spinner';
 import {ModelDisplayComponent} from '../model-display/model-display.component';
 import 'rxjs/add/operator/toPromise';
 import {saveAs} from 'file-saver/FileSaver';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
+import {InfoDialogComponent} from '../info-dialog/info-dialog.component';
 
 
 const SEGMENT_URL = 'api/segment/';
@@ -52,7 +54,7 @@ export class ModelUploadComponent implements OnInit, OnChanges {
   }
 
   constructor(private sanitizer: DomSanitizer, private http: HttpClient, private spinner: NgxSpinnerService,
-              private parent: ModelDisplayComponent) {
+              private parent: ModelDisplayComponent, public dialog: MatDialog) {
     const that = this;
     this.uploader.onAfterAddingFile = (fileItem) => {
       that.spinner.show();
@@ -202,5 +204,19 @@ export class ModelUploadComponent implements OnInit, OnChanges {
     this.filePreviewPath = null;
     this.resultImgPath = null;
     this.notifyStats(null);
+  }
+
+
+  openTncDialog(): void {
+    const dialogRef = this.dialog.open(InfoDialogComponent, {
+      width: '550px',
+      data: {
+        title: 'Terms and Conditions',
+        content: '  <ol>\n' +
+        '    <li>This service comes with no warranty expressed or implied.</li>\n' +
+        '    <li>This service can only be used for non commercial purposes.</li>\n' +
+        '  </ol>'
+      }
+    });
   }
 }

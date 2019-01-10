@@ -4,6 +4,7 @@ from PIL import Image
 from torch.autograd import Variable
 import torch.nn.functional as F
 import nibabel as nib
+from api.age_estimation.estimate_age import estimate_age
 
 SEG_LABELS_LIST = {
     "relaynet": [
@@ -96,6 +97,10 @@ def predict_segmentation(input_arr, model_name, header):
         indexes = [str(i) for i in indexes]
         counts = [str(c) for c in counts]
         stats['volume_estimates'] = dict(zip(indexes, counts))
+        feature_matrix = np.loadtxt('api/age_estimation/feature_matrix.csv')
+        predicted_age, uncertainty = estimate_age(np.expand_dims(feature_matrix[1], axis=0), 'api/age_estimation/gpr_model.sav', 'api/age_estimation/gpr_scaler.sav')
+        stats['predicted_age'] = np.round(predicted_age[0], 2)
+        stats['predicted_age_uncertainty'] = np.round(uncertainty[0], 2)
 
     # Create a new file
     nifti_img = nib.MGHImage(idx, np.eye(4), header=header)

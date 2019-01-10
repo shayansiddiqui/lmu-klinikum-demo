@@ -146,6 +146,7 @@ def segment(model_name):
             out = predict_segmentation(numpy_arr, model_name, nifty_file.header)
             out_im = out['result']
             stats = out['stats']
+            print(stats)
             nifti_img = out['nifti_img']
             nifti_img_path = "downloads/" + "_".join([file_prefixes['segment_result'], timestamp]) + ".mgz"
 

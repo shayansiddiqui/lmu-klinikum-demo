@@ -13,11 +13,15 @@ import {
   PreloadAllModules
 } from '@angular/router';
 import {
+  MatInputModule,
+  MatButtonModule,
   MatToolbarModule,
   MatCardModule,
   MatListModule,
   MatGridListModule,
-  MatSelectModule, MatSliderModule
+  MatSelectModule,
+  MatSliderModule,
+  MatDialogModule
 } from '@angular/material';
 
 import {ROUTES} from './app.routes';
@@ -31,6 +35,7 @@ import {ModelDisplayComponent} from './model-display/model-display.component';
 import {ModelSelectorComponent} from './model-selector/model-selector.component';
 import {ModelUploadComponent} from './model-upload/model-upload.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { InfoDialogComponent } from './info-dialog/info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +44,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     ModelDisplayComponent,
     ModelSelectorComponent,
     ModelUploadComponent,
+    InfoDialogComponent,
   ],
+  entryComponents: [InfoDialogComponent],
   imports: [
+    MatInputModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
@@ -54,6 +63,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatGridListModule,
     FileUploadModule,
     NgxSpinnerModule,
+    MatDialogModule,
     RouterModule.forRoot(ROUTES, {useHash: false, preloadingStrategy: PreloadAllModules})
   ],
   bootstrap: [AppComponent]

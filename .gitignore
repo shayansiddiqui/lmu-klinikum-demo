@@ -10,12 +10,15 @@
 
 # IDEs and editors
 /.idea
+/server/.idea
+/server/__pycahe__
 .project
 .classpath
 .c9/
 *.launch
 .settings/
 *.sublime-workspace
+**/__pycache__/**
 
 # IDE - VSCode
 .vscode/*
@@ -33,7 +36,15 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+server/logs
+server/downloads/*
 
 # System Files
-.DS_Store
+*.DS_Store
 Thumbs.db
+
+# Age estimation model
+server/api/age_estimation
+server/api/age_estimation/*
+
+
