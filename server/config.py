@@ -11,6 +11,8 @@ class Config(object):
     # use DEBUG mode?
     DEBUG = True
 
+    # server
+
     # use TESTING mode?
     TESTING = False
 
@@ -42,7 +44,7 @@ class Config(object):
     UPLOAD_FOLDER = '/tmp'
 
     EXTENSIONS = [
-        
+
         'extensions.toolbar',
     ]
 

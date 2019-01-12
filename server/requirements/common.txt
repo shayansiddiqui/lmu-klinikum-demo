@@ -2,3 +2,9 @@ Flask
 Flask-Script
 Nose
 Flask-SocketIO
+imageio
+nibabel
+scikit-learn==0.19.1
+scipy==1.0.0
+flask-debugtoolbar
+quickNat_pytorch

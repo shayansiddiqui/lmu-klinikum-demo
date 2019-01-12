@@ -1,0 +1,23 @@
+version: "3"
+services:
+  api:
+    build: ./server
+    ports:
+      - "0.0.0.0:5000:5000"
+    volumes:
+      - ./server:/app
+    networks:
+      - webnet
+
+  ui:
+    build: .
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "4200:4200"
+    networks:
+      - webnet
+    links:
+      - api
+networks:
+  webnet:

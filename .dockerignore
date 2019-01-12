@@ -1,0 +1,5 @@
+DockerFile
+.dockerignore
+server
+node_modules
+e2e

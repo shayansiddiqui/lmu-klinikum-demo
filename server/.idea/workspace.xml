@@ -134,7 +134,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -161,6 +160,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -246,7 +246,7 @@
       <window_info anchor="bottom" id="Python Console" order="9" weight="0.3277487" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49806523" weight="0.32984293" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49640685" weight="0.1277487" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4040404" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.4105339" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.13377556" />
@@ -518,9 +518,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#24#56#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

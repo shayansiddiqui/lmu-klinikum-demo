@@ -35,7 +35,7 @@ sample_files = {
     'relaynet': 'relaynet.nii'
 }
 
-MRI_CONVERT_PATH = '/usr/local/freesurfer/bin/'
+MRI_CONVERT_PATH = 'external/'
 
 
 def _allowed_file(model, filename):
